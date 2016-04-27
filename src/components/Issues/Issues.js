@@ -1,5 +1,7 @@
 import React from 'react';
 import Title from './Title';
+import Reporter from './Reporter';
+
 import styles from './Issues.scss';
 
 export default function Issues({ issues }) {
@@ -12,7 +14,7 @@ export default function Issues({ issues }) {
                         Main
                     </div>
                     <aside className={styles.aside}>
-                        Aside
+                        <Reporter issue={issue} />
                     </aside>
                 </li>
             )}
