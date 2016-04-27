@@ -5,11 +5,13 @@
 .listItem {
     display: flex;
     flex-flow: row wrap;
+    border-bottom: solid grey 1px;
+    margin-bottom: 10px;
 }
 
 .header {
     color: grey;
-    font-size: 1.8rem;
+    font-size: 1.1rem;
     font-weight: bold;
     flex: 1 100%;
     text-align: left;
@@ -31,6 +33,11 @@
     width: 40px;
 }
 
-.userLogin {
+.avatarLink {
+    cursor: pointer;
+}
 
+.userLogin {
+    cusor: pointer;
+    font-size: .8rem;
 }
