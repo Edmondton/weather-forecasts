@@ -3,17 +3,25 @@
 }
 
 .listItem {
-    display: list-item;
-}
-
-.issue {
     display: flex;
-    cursor: pointer;
-    margin-bottom: 20px;
+    flex-flow: row wrap;
 }
 
-.title {
-    font-size: 18px;
-    font-weight: bold;
+.header {
     color: grey;
+    font-size: 1.8rem;
+    font-weight: bold;
+    flex: 1 100%;
+    text-align: left;
+}
+
+.main {
+    flex: 2;
+    margin-bottom: 20px;
+    order: 1;
+}
+
+.aside {
+    order: 2;
+    flex-grow: 1;
 }

@@ -3,8 +3,8 @@ import styles from './Issues.scss';
 
 export default function Title({ issue }) {
     return (
-        <p className={styles.title}>
+        <header className={styles.header}>
             #{issue.get('number')} {issue.get('title')}
-        </p>
+        </header>
     );
 }

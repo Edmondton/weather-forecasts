@@ -7,9 +7,13 @@ export default function Issues({ issues }) {
         <ul className={styles.list}>
             {issues.map((issue, i) =>
                 <li className={styles.listItem} key={i}>
-                    <section className={styles.issue}>
-                        <Title issue={issue} />
-                    </section>
+                    <Title issue={issue} />
+                    <div className={styles.main}>
+                        Main
+                    </div>
+                    <aside className={styles.aside}>
+                        Aside
+                    </aside>
                 </li>
             )}
         </ul>

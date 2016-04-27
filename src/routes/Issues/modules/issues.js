@@ -2,8 +2,8 @@ import fetch from 'isomorphic-fetch';
 import Immutable from 'immutable';
 
 const ENDPOINT = 'http://api.github.com/repos/npm/npm/issues?access_token=fffe6541bd86954dbe7b18b46f3666890f5c3bc1';
-export const REQUEST_POSTS = 'REQUEST_POSTS'
-export const RECEIVE_POSTS = 'RECEIVE_POSTS'
+export const REQUEST_POSTS = 'REQUEST_POSTS';
+export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 
 export function fetchPostsIfNeeded() {
     return (dispatch, getState) => {
