@@ -1,0 +1,19 @@
+.list {
+    list-style: none;
+}
+
+.listItem {
+    display: list-item;
+}
+
+.issue {
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    color: grey;
+}

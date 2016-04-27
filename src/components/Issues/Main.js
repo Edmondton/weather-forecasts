@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react'
+import Immutable from 'immutable';
 import { fetchPostsIfNeeded } from '../../routes/Issues/modules/issues';
 import Issues from './Issues'
 
@@ -27,7 +28,7 @@ class Main extends Component {
 
 Object.assign(Main.prototype, PureRenderMixin);
 
-App.propTypes = {
+Main.propTypes = {
     issues: PropTypes.instanceOf(Immutable.List),
     dispatch: PropTypes.func.isRequired
 }

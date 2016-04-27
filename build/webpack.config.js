@@ -18,6 +18,7 @@ const webpackConfig = {
     root: paths.client(),
     extensions: ['', '.js', '.jsx', '.json']
   },
+  watch: true,
   module: {}
 }
 // ------------------------------------

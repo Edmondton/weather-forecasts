@@ -9,6 +9,7 @@ import _debug from 'debug'
 import config from '../config'
 import webpackDevMiddleware from './middleware/webpack-dev'
 import webpackHMRMiddleware from './middleware/webpack-hmr'
+import 'isomorphic-fetch';
 
 const debug = _debug('app:server')
 const paths = config.utils_paths

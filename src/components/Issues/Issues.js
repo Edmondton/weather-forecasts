@@ -1,26 +1,17 @@
-import React, {Component, PropTypes} from 'react'
+import React from 'react';
+import Title from './Title';
+import styles from './Issues.scss';
 
-export default function Issues ({ issues }) {
+export default function Issues({ issues }) {
     return (
-        <table>
-            <thead>
-            <tr>
-                <th>Number</th>
-                <th>Title</th>
-                <th>Report Name</th>
-                <th>Description</th>
-            </tr>
-            </thead>
-            <tbody>
+        <ul className={styles.list}>
             {issues.map((issue, i) =>
-                <tr key={i}>
-                    <td>{ issue.get('number') }</td>
-                    <td>{ issue.get('title') }</td>
-                    <td>{ issue.getIn(['user', 'login']) }</td>
-                    <td>{ issue.get('body').slice(0, 140) }</td>
-                </tr>
+                <li className={styles.listItem} key={i}>
+                    <section className={styles.issue}>
+                        <Title issue={issue} />
+                    </section>
+                </li>
             )}
-            </tbody>
-        </table>
-    )
+        </ul>
+  )
 }

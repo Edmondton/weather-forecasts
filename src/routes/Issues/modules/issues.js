@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import Immutable from 'immutable';
 
-const ENDPOINT = 'http://api.github.com/repos/npm/npm/issues';
+const ENDPOINT = 'http://api.github.com/repos/npm/npm/issues?access_token=fffe6541bd86954dbe7b18b46f3666890f5c3bc1';
 export const REQUEST_POSTS = 'REQUEST_POSTS'
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 
@@ -29,7 +29,12 @@ function fetchPosts() {
     return dispatch => {
         dispatch(requestPosts())
         return fetch(ENDPOINT)
-            .then(response => response.json())
+            .then(response => {
+                if (response.state >= 400) {
+                    return {};
+                }
+                return response.json()
+            })
             .then(json => dispatch(receivePosts(json)))
     }
 }
@@ -38,12 +43,12 @@ function fetchPosts() {
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
-function issues(state = Immutable.List(), action) {
-    if (!action) {
+function issues(state = Immutable.List(), {type, payload}) {
+    if (!type || !payload) {
         return state;
     }
 
-    switch (action.type) {
+    switch (type) {
         case RECEIVE_POSTS:
         case REQUEST_POSTS:
             return Immutable.fromJS(payload);
