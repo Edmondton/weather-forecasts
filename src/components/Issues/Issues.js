@@ -1,6 +1,8 @@
 import React from 'react';
+
 import Title from './Title';
 import Reporter from './Reporter';
+import Labels from './Labels';
 
 import styles from './Issues.scss';
 
@@ -15,6 +17,7 @@ export default function Issues({ issues }) {
                     </div>
                     <aside className={styles.aside}>
                         <Reporter issue={issue} />
+                        <Labels labels={issue.getIn(['labels'])} />
                     </aside>
                 </li>
             )}
