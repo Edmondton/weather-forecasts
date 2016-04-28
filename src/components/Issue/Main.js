@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import Immutable from 'immutable';
+import { Link } from 'react-router';
 
 import Issue from '../Issues/Issue';
 import FullBody from './FullBody';
@@ -17,8 +18,8 @@ class Main extends Component {
 	    const { issue } = this.props;
         return (
 			<div className={styles.container}>
+				<Link to="/issues">Back</Link>
 	            <Issue
-		                styles={}
 		                issue={issue}
 	                    body={<FullBody text={issue.get('body')} />}
 	            />
