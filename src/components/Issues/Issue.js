@@ -1,18 +1,19 @@
 import React from 'react';
 import Immutable from 'immutable';
+import { Link } from 'react-router';
 
 import Title from './Title';
 import Reporter from './Reporter';
 import Labels from './Labels';
 
-import defaultStyles from './styles.scss';
+import styles from './styles.scss';
 
-export default function Issue ({ issue = Immutable.Map(), dispatch, body, styles = defaultStyles }) {
+export default function Issue ({ issue = Immutable.Map(), body, onClick }) {
 	return (
 		<section className={styles.listItem}>
-			<Title issue={issue} dispatch={dispatch} />
+			<Title issue={issue} onClick={onClick} />
 			<div className={styles.main}>
-				{body}
+                    {body}
 			</div>
 			<aside className={styles.aside}>
 				<Reporter user={issue.get('user')} />
