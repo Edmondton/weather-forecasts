@@ -17,17 +17,8 @@ export default function Issues({ issues  = Immutable.List() }) {
 
     return (
         <ul className={styles.list}>
-            {issues.map((issue, i) =>
-                <li className={styles.listItem} key={i}>
-                    <Title issue={issue} />
-                    <div className={styles.main}>
-                        <ShortenBody text={issue.get('body')} />
-                    </div>
-                    <aside className={styles.aside}>
-                        <Reporter user={issue.get('user')} />
-                        <Labels labels={issue.get('labels')} />
-                    </aside>
-                </li>
+            {issues.map((issue, index) =>
+                <Issue issue={issue} key={index} />
             )}
         </ul>
   )

@@ -17,16 +17,18 @@ class Main extends Component {
 
     render() {
         const { issue } = this.props;
-        return [
-            <Title issue={issue} key="title" />,
-            <div className={styles.main} key="body">
-                <ShortenBody text={issue.get('body')} />
-            </div>,
-            <aside className={styles.aside} key="aside">
-                <Reporter user={issue.get('user')} />
-                <Labels labels={issue.get('labels')} />
-            </aside>
-        ];
+        return (
+            <li className={styles.listItem}>
+                <Title issue={issue} />
+                <div className={styles.main}>
+                  <ShortenBody text={issue.get('body')} />
+                </div>
+                <aside className={styles.aside}>
+                  <Reporter user={issue.get('user')} />
+                  <Labels labels={issue.get('labels')} />
+                </aside>
+            </li>
+        );
     }
 }
 
