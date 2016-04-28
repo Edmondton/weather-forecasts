@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import Immutable from 'immutable';
 
+
 import Title from '../shared/Title';
 import Reporter from '../shared/Reporter';
 import Labels from '../shared/Labels';

@@ -5,7 +5,6 @@ import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
 
 import reducers from './reducers'
-import rootReducers from '../routes/Issues/modules/issues';
 
 export default (initialState = {}, history) => {
     let middleware = applyMiddleware(thunkMiddleware, createLogger(), routerMiddleware(history))

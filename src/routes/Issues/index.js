@@ -8,7 +8,7 @@ export default (store) => ({
             './modules/issues'
         ], (require) => {
             const Issues = require('./containers/IssuesContainer').default
-            const reducer = require('./modules/issues').default
+            const reducer = require('../../reducers').default
 
             injectReducer(store, { key: 'issues', reducer })
 

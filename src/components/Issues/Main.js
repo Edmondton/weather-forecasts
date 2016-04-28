@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import Immutable from 'immutable';
-import { fetchPostsIfNeeded } from '../../routes/Issues/modules/issues';
+import { fetchPostsIfNeeded } from '../../reducers';
 import Issues from './Issues'
 
 // Mixins
