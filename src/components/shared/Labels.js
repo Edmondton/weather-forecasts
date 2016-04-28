@@ -1,7 +1,7 @@
 import React from 'react';
 import Immutable from 'immutable';
 
-import styles from './Issues.scss';
+import styles from './shared.scss';
 
 export default function Labels ({ labels = Immutable.List() }) {
     if (labels.size == 0) {

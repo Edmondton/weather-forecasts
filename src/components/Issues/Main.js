@@ -29,7 +29,7 @@ class Main extends Component {
 Object.assign(Main.prototype, PureRenderMixin);
 
 Main.propTypes = {
-    issues: PropTypes.instanceOf(Immutable.List),
+    issues: PropTypes.instanceOf(Immutable.List).isRequired,
     dispatch: PropTypes.func.isRequired
 }
 
