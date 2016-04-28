@@ -1,21 +1,22 @@
 import React from 'react';
-import Title from './Title';
-import styles from './Issues.scss';
+import Immutable from 'immutable';
 
-export default function Reporter ({ issue }) {
-    const url = issue.getIn(['user', 'html_url']);
+import styles from './shared.scss';
+
+export default function Reporter ({ user = Immutable.Map() }) {
+    const url = user.get('html_url');
 
     return (
         <div>
             <a href={url} className={styles.avatarLink} >
               <img
-                  src={issue.getIn(['user', 'avatar_url'])}
+                  src={user.get('avatar_url')}
                   className={styles.avatar}
               />
             </a>
             <p className={styles.userLogin}>
               <a href={url}>
-                @{issue.getIn(['user', 'login'])}
+                @{user.get('login')}
               </a>
             </p>
         </div>

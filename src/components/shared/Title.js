@@ -1,7 +1,9 @@
 import React from 'react';
-import styles from './Issues.scss';
+import Immutable from 'immutable';
 
-export default function Title({ issue }) {
+import styles from './shared.scss';
+
+export default function Title({ issue = Immutable.Map() }) {
     return (
         <header className={styles.header}>
             #{issue.get('number')} {issue.get('title')}

@@ -3,10 +3,6 @@ import CoreLayout from '../layouts/CoreLayout/CoreLayout'
 import Home from './Home'
 
 export const createRoutes = (store) => {
-    /*  Note: Instead of using JSX, we are using react-router PlainRoute,
-     a simple javascript object to provide route definitions.
-     When creating a new async route, pass the instantiated store!   */
-
     const routes = {
         path: '/',
         component: CoreLayout,
@@ -15,15 +11,14 @@ export const createRoutes = (store) => {
             require.ensure([], (require) => {
                 next(null, [
                     // Provide store for async reducers and middleware
-                    require('./Counter').default(store),
                     require('./Issues').default(store),
                     require('./NotFound').default
                 ])
             })
         }
-    }
+    };
 
-    return routes
+    return routes;
 }
 
 export default createRoutes

@@ -18,19 +18,26 @@
 }
 
 .main {
-    flex: 2;
+    align-items: center;
+    color: #999;
+    display: flex;
+    flex: 8;
+    font-size: .8rem;
     margin-bottom: 20px;
     order: 1;
+    text-align: left;
 }
 
 .aside {
     order: 2;
     flex-grow: 1;
+    text-align: right;
 }
 
 .avatar {
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
+    border-radius: 6px;
 }
 
 .avatarLink {
@@ -40,4 +47,15 @@
 .userLogin {
     cusor: pointer;
     font-size: .8rem;
+}
+
+.label {
+    font-size: .8rem;
+    margin-bottom: 10px;
+}
+
+.labelColor {
+    border: solid 1px #3a33d1;
+    border-radius: 5px;
+    padding: 3px;
 }
