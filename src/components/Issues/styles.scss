@@ -5,8 +5,11 @@
 .listItem {
     display: flex;
     flex-flow: row wrap;
-    border-bottom: solid grey 1px;
     margin-bottom: 10px;
+}
+
+.listStyle {
+    border-bottom: solid grey 1px;
 }
 
 .header {

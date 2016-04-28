@@ -5,12 +5,12 @@ export default (store) => ({
     getComponent(nextState, next) {
         require.ensure([
             './containers/IssuesContainer',
-            './modules/issues'
+            '../../reducers'
         ], (require) => {
-            const Issues = require('./containers/IssuesContainer').default
-            const reducer = require('../../reducers').default
+            const Issues = require('./containers/IssuesContainer').default;
+            const reducer = require('../../reducers').default;
 
-            injectReducer(store, { key: 'issues', reducer })
+            injectReducer(store, { key: 'issues', reducer });
 
             next(null, Issues)
         })

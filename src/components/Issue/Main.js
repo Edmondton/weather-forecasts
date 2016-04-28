@@ -1,15 +1,12 @@
 import React, {Component, PropTypes} from 'react'
 import Immutable from 'immutable';
 
-
-import Title from '../shared/Title';
-import Reporter from '../shared/Reporter';
-import Labels from '../shared/Labels';
-import ShortenBody from '../shared/ShortenBody';
+import Issue from '../Issues/Issue';
+import FullBody from './FullBody';
 
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-import styles from '../shared/shared.scss';
+import styles from './styles.scss';
 
 class Main extends Component {
     constructor(props) {
@@ -17,18 +14,15 @@ class Main extends Component {
     }
 
     render() {
-        const { issue } = this.props;
+	    const { issue } = this.props;
         return (
-            <li className={styles.listItem}>
-                <Title issue={issue} />
-                <div className={styles.main}>
-                  <ShortenBody text={issue.get('body')} />
-                </div>
-                <aside className={styles.aside}>
-                  <Reporter user={issue.get('user')} />
-                  <Labels labels={issue.get('labels')} />
-                </aside>
-            </li>
+			<div className={styles.container}>
+	            <Issue
+		                styles={}
+		                issue={issue}
+	                    body={<FullBody text={issue.get('body')} />}
+	            />
+			</div>
         );
     }
 }
@@ -36,8 +30,8 @@ class Main extends Component {
 Object.assign(Main.prototype, PureRenderMixin);
 
 Main.propTypes = {
-    issue: PropTypes.instanceOf(Immutable.Map).isRequired,
-    dispatch: PropTypes.func
+    dispatch: PropTypes.func.isRequired,
+	issue: PropTypes.instanceOf(Immutable.Map).isRequired
 };
 
 export default Main;

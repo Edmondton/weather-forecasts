@@ -1,22 +1,26 @@
 import React from 'react';
 import Immutable from 'immutable';
 
+import styles from './styles.scss';
+
 export default function Labels ({ labels = Immutable.List() }) {
     if (labels.size == 0) {
         return null;
     }
 
-    var items = labels.map((item, index) => {
+    const items = labels.toArray().map((item, index) => {
+        const style = {
+            color: `#${item.get('color')}`
+        };
+
         return (
-                <p key={index}>
-                  {item.get('name')}
-                </p>
+            <li key={index} className={styles.label}>
+                <span className={styles.labelColor} style={style}>{item.get('name')}</span>
+            </li>
         );
     });
 
     return (
-        <div>
-          {items}
-        </div>
-    )
+        <ul>{items}</ul>
+    );
 }

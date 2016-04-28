@@ -12,7 +12,7 @@ export const createRoutes = (store) => {
                 next(null, [
                     // Provide store for async reducers and middleware
                     require('./Issues').default(store),
-                    // require('./Issue').default(store),
+                    require('./Issue').default(store),
                     require('./NotFound').default
                 ])
             })

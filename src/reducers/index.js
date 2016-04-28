@@ -16,7 +16,7 @@ export function fetchPostsIfNeeded() {
 export function selectIssue(issue) {
     return {
         type: SELECT_ISSUE,
-        issue
+        payload: issue
     };
 }
 
@@ -78,9 +78,9 @@ function selectedIssue (state = Immutable.Map(), {type, payload}) {
     }
 }
 
-export default function issuesReducer(state = Immutable.Map(), action) {
+export default function rootReducer(state = Immutable.Map(), action) {
     return state.merge({
         issues: issues(state.get('issues'), action),
-        selectedIssue: selectedIssue(state.get('selectedIssue', action))
+        selectedIssue: selectedIssue(state.get('selectedIssue'), action)
     });
 }

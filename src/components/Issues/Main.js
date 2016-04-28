@@ -20,7 +20,7 @@ class Main extends Component {
         const { issues } = this.props;
         return (
             <section>
-                <Issues issues={issues}/>
+                <Issues issues={issues} dispatch={this.props.dispatch} />
             </section>
         )
     }
