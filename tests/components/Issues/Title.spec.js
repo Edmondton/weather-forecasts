@@ -1,5 +1,5 @@
 import React from 'react';
-import Title from '../../../src/components/Issues/Title';
+import Title from 'components/Issues/Title';
 import {render} from 'enzyme';
 import Immutable from 'immutable';
 
