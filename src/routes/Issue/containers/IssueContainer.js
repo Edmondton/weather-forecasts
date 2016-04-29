@@ -4,7 +4,8 @@ import Issue from 'components/Issue';
 
 function mapStateToProps(state) {
     return {
-        issue: state.issues && state.issues.get('selectedIssue')
+        issue: state.issues && state.issues.get('selectedIssue'),
+        comments: state.issues && state.issues.get('comments')
     }
 }
 

@@ -1,7 +1,7 @@
 import {injectReducer} from '../../store/reducers'
 
 export default (store) => ({
-	path: 'issue',
+	path: 'issue/:number',
 	getComponent(nextState, next) {
 		require.ensure([
 			'./containers/IssueContainer',
