@@ -13,7 +13,7 @@ describe('(Component) Header', () => {
 	it('Renders a welcome message', () => {
 		const welcome = _wrapper.find('h1');
 		expect(welcome).to.exist;
-		expect(welcome.text()).to.match(/React Redux Starter Kit/);
+		expect(welcome.text()).to.match(/Github Issues Viewer/);
 	});
 
 	describe('Navigation links...', () => {
@@ -22,7 +22,7 @@ describe('(Component) Header', () => {
 		});
 
 		it('Should render an Link to Counter route)', () => {
-			expect(_wrapper.contains(<Link to="/counter"/>)).to.equal.true;
+			expect(_wrapper.contains(<Link to="/issues"/>)).to.equal.true;
 		});
 	});
 });
