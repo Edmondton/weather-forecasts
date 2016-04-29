@@ -1,18 +1,18 @@
-import React from 'react'
-import {IndexLink, Link} from 'react-router'
-import classes from './Header.scss'
+import React from 'react';
+import {IndexLink, Link} from 'react-router';
+import classes from './Header.scss';
 
 export const Header = () => (
   <div>
     <h1>Github Issues Viewer</h1>
-    <IndexLink to='/' activeClassName={classes.activeRoute}>
+    <IndexLink to="/" activeClassName={classes.activeRoute}>
       Home
     </IndexLink>
     {' · '}
-    <Link to='/issues' activeClassName={classes.activeRoute}>
+    <Link to="/issues" activeClassName={classes.activeRoute}>
       Issues
     </Link>
   </div>
-)
+);
 
-export default Header
+export default Header;

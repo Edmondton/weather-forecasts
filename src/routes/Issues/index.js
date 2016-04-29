@@ -1,18 +1,18 @@
-import { injectReducer } from '../../store/reducers'
+import {injectReducer} from '../../store/reducers';
 
 export default (store) => ({
-    path: 'issues',
-    getComponent(nextState, next) {
-        require.ensure([
-            './containers/IssuesContainer',
-            '../../reducers'
-        ], (require) => {
-            const Issues = require('./containers/IssuesContainer').default;
-            const reducer = require('../../reducers').default;
+	path: 'issues',
+	getComponent (nextState, next) {
+		require.ensure([
+			'./containers/IssuesContainer',
+			'../../reducers'
+		], (require) => {
+			const Issues = require('./containers/IssuesContainer').default;
+			const reducer = require('../../reducers').default;
 
-            injectReducer(store, { key: 'issues', reducer });
+			injectReducer(store, {key: 'issues', reducer});
 
-            next(null, Issues)
-        })
-    }
+			next(null, Issues);
+		});
+	}
 });

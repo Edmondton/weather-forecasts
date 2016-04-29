@@ -1,9 +1,9 @@
-import webpack from 'webpack'
-import cssnano from 'cssnano'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import config from '../config'
-import _debug from 'debug'
+import webpack from 'webpack';
+import cssnano from 'cssnano';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import config from '../config';
+import _debug from 'debug';
 
 const debug = _debug('app:webpack:config');
 const paths = config.utils_paths;
@@ -64,7 +64,7 @@ if (__DEV__) {
 	webpackConfig.plugins.push(
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin()
-	)
+	);
 } else if (__PROD__) {
 	debug('Enable plugins for production (OccurenceOrder, Dedupe & UglifyJS).');
 	webpackConfig.plugins.push(
@@ -77,7 +77,7 @@ if (__DEV__) {
 				warnings: false
 			}
 		})
-	)
+	);
 }
 
 // Don't split bundles during testing, since we only want import one bundle
@@ -86,7 +86,7 @@ if (!__TEST__) {
 		new webpack.optimize.CommonsChunkPlugin({
 			names: ['vendor']
 		})
-	)
+	);
 }
 
 // ------------------------------------
@@ -194,7 +194,7 @@ if (isUsingCSSModules) {
 }
 
 // Loaders for files that should not be treated as CSS modules.
-const excludeCSSModules = isUsingCSSModules ? cssModulesRegex : false
+const excludeCSSModules = isUsingCSSModules ? cssModulesRegex : false;
 webpackConfig.module.loaders.push({
 	test: /\.scss$/,
 	exclude: excludeCSSModules,

@@ -1,6 +1,5 @@
 import React from 'react';
 import Immutable from 'immutable';
-import { Link } from 'react-router';
 
 import Title from './Title';
 import Reporter from './Reporter';
@@ -13,7 +12,7 @@ export default function Issue ({ issue = Immutable.Map(), body, onClick }) {
 		<section className={styles.listItem}>
 			<Title issue={issue} onClick={onClick} />
 			<div className={styles.main}>
-                    {body}
+				{body}
 			</div>
 			<aside className={styles.aside}>
 				<Reporter user={issue.get('user')} />

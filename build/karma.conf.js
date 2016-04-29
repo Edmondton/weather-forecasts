@@ -70,7 +70,7 @@ if (config.coverage_enabled) {
 		include: new RegExp(config.dir_client),
 		loader: 'isparta',
 		exclude: /node_modules/
-	}]
+	}];
 }
 
 // cannot use `export default` because of Karma.

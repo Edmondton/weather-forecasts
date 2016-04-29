@@ -13,8 +13,8 @@ export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
 // Actions
 export function fetchPostsIfNeeded() {
 	return (dispatch) => {
-		return dispatch(fetchPosts())
-	}
+		return dispatch(fetchPosts());
+	};
 }
 
 export function selectIssue(issue) {
@@ -32,20 +32,20 @@ export function fetchCommentsIfNeeded(issue) {
 					if (response.state >= 400) {
 						return {};
 					}
-					return response.json()
+					return response.json();
 				})
 				.then(json => dispatch(receiveComments(json)));
 		}
 		else {
 			dispatch(receiveComments([]));
 		}
-	}
+	};
 }
 
 function requestPosts() {
 	return {
 		type: REQUEST_ISSUES
-	}
+	};
 }
 
 function receivePosts(json) {
@@ -53,20 +53,19 @@ function receivePosts(json) {
 		type: RECEIVE_ISSUES,
 		payload: json,
 		receivedAt: Date.now()
-	}
+	};
 }
 
 function receiveComments(json) {
 	return {
 		type: RECEIVE_COMMENTS,
 		payload: json
-	}
-
+	};
 }
 
 function fetchPosts() {
 	return dispatch => {
-		dispatch(requestPosts())
+		dispatch(requestPosts());
 		return fetch(ENDPOINT)
 			.then(response => {
 				if (response.state >= 400) {
@@ -74,10 +73,10 @@ function fetchPosts() {
 				}
 				debug('headers', response.headers);
 				console.log('headers', response.headers.get('Link'));
-				return response.json()
+				return response.json();
 			})
 			.then(json => dispatch(receivePosts(json)));
-	}
+	};
 }
 
 // ------------------------------------
@@ -89,11 +88,11 @@ function issues(state = Immutable.List(), {type, payload}) {
 	}
 
 	switch (type) {
-		case RECEIVE_ISSUES:
-		case REQUEST_ISSUES:
-			return Immutable.fromJS(payload);
-		default:
-			return state;
+	case RECEIVE_ISSUES:
+	case REQUEST_ISSUES:
+		return Immutable.fromJS(payload);
+	default:
+		return state;
 	}
 }
 
@@ -103,10 +102,10 @@ function selectedIssue(state = Immutable.Map(), {type, payload}) {
 	}
 
 	switch (type) {
-		case SELECT_ISSUE:
-			return payload;
-		default:
-			return state;
+	case SELECT_ISSUE:
+		return payload;
+	default:
+		return state;
 	}
 }
 
@@ -116,10 +115,10 @@ function comments(state = Immutable.List(), {type, payload}) {
 	}
 
 	switch (type) {
-		case RECEIVE_COMMENTS:
-			return Immutable.fromJS(payload);
-		default:
-			return state;
+	case RECEIVE_COMMENTS:
+		return Immutable.fromJS(payload);
+	default:
+		return state;
 	}
 }
 

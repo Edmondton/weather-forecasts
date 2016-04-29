@@ -5,8 +5,8 @@ import Reporter from '../Issues/Reporter';
 
 import styles from './styles.scss';
 
-export default function Comments ({ comments = Immutable.List() }) {
-	if (comments.size == 0) {
+export default function Comments({comments = Immutable.List()}) {
+	if (comments.size === 0) {
 		return null;
 	}
 
@@ -14,11 +14,11 @@ export default function Comments ({ comments = Immutable.List() }) {
 		return (
 			<div key={index} className={styles.commentContainer}>
 				<div className={styles.commenter}>
-					<Reporter user={comment.get('user')} />
+					<Reporter user={comment.get('user')}/>
 				</div>
 				<div className={styles.commentText}>
 					<header>Commented:</header>
-					<FullBody text={comment.get('body')} styles={styles.commentText} />
+					<FullBody text={comment.get('body')} styles={styles.commentText}/>
 				</div>
 			</div>
 		);
@@ -28,5 +28,5 @@ export default function Comments ({ comments = Immutable.List() }) {
 		<section>
 			{markup}
 		</section>
-	)
+	);
 }

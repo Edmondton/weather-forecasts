@@ -3,24 +3,24 @@ import Immutable from 'immutable';
 
 import styles from './styles.scss';
 
-export default function Labels ({ labels = Immutable.List() }) {
-    if (labels.size == 0) {
-        return null;
-    }
+export default function Labels({labels = Immutable.List()}) {
+	if (labels.size === 0) {
+		return null;
+	}
 
-    const items = labels.toArray().map((item, index) => {
-        const style = {
-            color: `#${item.get('color')}`
-        };
+	const items = labels.toArray().map((item, index) => {
+		const style = {
+			color: `#${item.get('color')}`
+		};
 
-        return (
-            <li key={index} className={styles.label}>
-                <span className={styles.labelColor} style={style}>{item.get('name')}</span>
-            </li>
-        );
-    });
+		return (
+			<li key={index} className={styles.label}>
+				<span className={styles.labelColor} style={style}>{item.get('name')}</span>
+			</li>
+		);
+	});
 
-    return (
-        <ul>{items}</ul>
-    );
+	return (
+		<ul>{items}</ul>
+	);
 }

@@ -1,3 +1,3 @@
 declare module Image {
-  declare var exports: any;
+  	declare var exports: any;
 }
