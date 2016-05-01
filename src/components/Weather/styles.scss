@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.header {
+    flex: 1 100%
+}
+
+.dayContainer {
+    border: solid grey 2px;
+    border-radius: 6px;
+    font-size: .8rem;
+    height: 260px;
+    margin-bottom: 20px;
+    overflow-y: hidden;
+    padding: 20px;
+    text-align: left;
+    vertical-align: top;
+    width: 100%;
+}
+
+.main {
+    flex: 2 100%
+}
+
+.tempature {
+    display: inline;
+    float: left;
+    padding: 20px;
+}
+
+.tempature:first-child {
+    padding-left: 0px;
+}
+
+.time {
+    text-align: center;
+}
+
+.description {
+    font-size: .6rem;
+    text-align: center;
+    text-transform: capitalize;
+}
