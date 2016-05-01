@@ -49,6 +49,7 @@ function weatherReducer(state = Immutable.Map(), {type, payload}) {
 
 export default function rootReducer(state = Immutable.Map(), action) {
 	return state.merge({
-		weather: weatherReducer(state.get('weather'), action)
+		weather: weatherReducer(state.get('weather'), action),
+		city: 'New York'
 	});
 }
