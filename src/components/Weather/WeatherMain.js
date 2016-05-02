@@ -57,7 +57,11 @@ class WeatherMain extends Component {
         return (
             <div className={styles.container}>
                 <div>
-                    City: <input type="text" onBlur={this.onChange.bind(this)} defaultValue={this.props.city} />
+                    City: <input type="text" 
+                                 onBlur={this.onChange.bind(this)} 
+                                 defaultValue={this.props.city} 
+                                 className={styles.cityInput}
+                />
                 </div>
                 <header className={styles.header}>
                     Weather Forecast For {weather.getIn(['city', 'name'])}
