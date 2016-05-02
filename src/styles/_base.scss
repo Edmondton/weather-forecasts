@@ -10,3 +10,15 @@ For example:
 @import './variables/components';
 @import './themes/default';
 */
+
+@mixin phone-landscape {
+    @media (max-width: 773px) {
+        @content;
+    }
+}
+
+@mixin phone-portrait {
+    @media (max-width: 435px) {
+        @content;
+    }
+}

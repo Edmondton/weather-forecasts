@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import Immutable from 'immutable';
 
-import WeatherCard from './WeatherDay'
+import WeatherDay from './WeatherDay'
 
 import {fetchWeather} from '../../reducers/actions';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
@@ -24,7 +24,7 @@ class WeatherMain extends Component {
             });
         }
     }
-    
+
     onChange(event) {
         const city = event.target.value;
         this.getWeather({
@@ -44,7 +44,7 @@ class WeatherMain extends Component {
         if (temps) {
             return temps.map((item, key) => {
                 return (
-                    <WeatherCard date={key} data={item} key={key} />
+                    <WeatherDay date={key} data={item} key={key} />
                 );
             });
         }
@@ -57,9 +57,9 @@ class WeatherMain extends Component {
         return (
             <div className={styles.container}>
                 <div>
-                    City: <input type="text" 
-                                 onBlur={this.onChange.bind(this)} 
-                                 defaultValue={this.props.city} 
+                    City: <input type="text"
+                                 onBlur={this.onChange.bind(this)}
+                                 defaultValue={this.props.city}
                                  className={styles.cityInput}
                 />
                 </div>
