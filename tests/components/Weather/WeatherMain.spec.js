@@ -16,6 +16,6 @@ describe('(Component) WeatherMain', () => {
     it('should render correctly', () => {
         const header = _wrapper.find('header');
 
-        expect(header.text()).to.equal('Weather Forecast For NYC ')
+        expect(header.text()).to.equal('Weather Forecast For New York ')
     })
 });
