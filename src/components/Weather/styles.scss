@@ -14,7 +14,6 @@
     border: solid grey 2px;
     border-radius: 6px;
     font-size: .8rem;
-    height: 260px;
     margin-bottom: 20px;
     overflow-y: hidden;
     padding: 20px;
@@ -27,25 +26,48 @@
     flex: 2 100%
 }
 
-.temperature {
+.temperatureContainer {
     display: inline;
     float: left;
     padding: 20px;
+
+    @include phone-landscape {
+        width: 100%;
+        display: inline;
+        padding: 5px 0px;
+    }
+
+    @include phone-portrait {
+        display: inline;
+        padding: 5px 0px;
+    }
 }
 
-.temperature:first-child {
+.temperatureContainer:first-child {
     padding-left: 0px;
+}
+
+.temperature {
+    @include phone-landscape {
+        display: inline;
+    }
 }
 
 .time {
     text-align: center;
 
     @include phone-landscape {
-        background-color: red;
+        display: inline;
     }
+}
 
-    @include phone-portrait {
-        background-color: green;
+.weatherIcon {
+    height: 100px;
+    width: 100px;
+
+    @include phone-landscape {
+        height: 50px;
+        width: 50px;
     }
 }
 
@@ -53,6 +75,11 @@
     font-size: .6rem;
     text-align: center;
     text-transform: capitalize;
+
+    @include phone-landscape {
+        display: inline;
+        margin-left: 10px;
+    }
 }
 
 .cityInput {
