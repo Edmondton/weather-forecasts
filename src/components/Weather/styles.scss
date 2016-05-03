@@ -86,3 +86,17 @@
     width: 150px;
     margin-bottom: 10px;
 }
+
+.unitSelection {
+    font-size: .8rem;
+    margin-left: 10px;
+    vertical-align: middle;
+
+    label {
+        margin-left: 5px;
+    }
+
+    input {
+        margin-left: 10px;
+    }
+}
