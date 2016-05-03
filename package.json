@@ -165,6 +165,7 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "pre-commit": [
-    "lint"
+    "lint",
+    "test"
   ]
 }
