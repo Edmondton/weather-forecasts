@@ -1,0 +1,102 @@
+@import 'base';
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.header {
+    flex: 1 100%
+}
+
+.dayContainer {
+    border: solid grey 2px;
+    border-radius: 6px;
+    font-size: .8rem;
+    margin-bottom: 20px;
+    overflow-y: hidden;
+    padding: 20px;
+    text-align: left;
+    vertical-align: top;
+    width: 100%;
+}
+
+.main {
+    flex: 2 100%
+}
+
+.temperatureContainer {
+    display: inline;
+    float: left;
+    padding: 20px;
+
+    @include phone-landscape {
+        width: 100%;
+        display: inline;
+        padding: 5px 0px;
+    }
+
+    @include phone-portrait {
+        display: inline;
+        padding: 5px 0px;
+    }
+}
+
+.temperatureContainer:first-child {
+    padding-left: 0px;
+}
+
+.temperature {
+    @include phone-landscape {
+        display: inline;
+    }
+}
+
+.time {
+    text-align: center;
+
+    @include phone-landscape {
+        display: inline;
+    }
+}
+
+.weatherIcon {
+    height: 100px;
+    width: 100px;
+
+    @include phone-landscape {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.description {
+    font-size: .6rem;
+    text-align: center;
+    text-transform: capitalize;
+
+    @include phone-landscape {
+        display: inline;
+        margin-left: 10px;
+    }
+}
+
+.cityInput {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.unitSelection {
+    font-size: .8rem;
+    margin-left: 10px;
+    vertical-align: middle;
+
+    label {
+        margin-left: 5px;
+    }
+
+    input {
+        margin-left: 10px;
+    }
+}
