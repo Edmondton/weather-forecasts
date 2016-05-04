@@ -165,11 +165,7 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "pre-commit": [
-<<<<<<< HEAD
-    "lint"
-=======
     "lint",
     "test"
->>>>>>> 6f3541c1556e80f2c517cb8479b09a4ebb0e2065
   ]
 }
