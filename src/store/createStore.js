@@ -6,7 +6,6 @@ import createLogger from 'redux-logger';
 import reducers from './reducers';
 
 export default (initialState = {}, history) => {
-	const logger = createLogger();
 	let middleware = applyMiddleware(thunkMiddleware, createLogger(), routerMiddleware(history));
 
 	// Use DevTools chrome extension in development
